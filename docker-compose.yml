@@ -1,5 +1,3 @@
-version: '3.1'
-
 services:
   backend:
     build: .
@@ -10,3 +8,7 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://46.101.105.82:5432/fisherman
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+    deploy:
+      resources:
+        limits:
+          memory: 400m
