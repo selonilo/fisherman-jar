@@ -1,17 +1,14 @@
-version: "3.8"
+version: '3.8'
 
 services:
   backend:
-    image: eclipse-temurin:21-jdk   # hazır image, build yok
+    build: .
     container_name: fisherman-backend
-    volumes:
-      - ./opt/jenkins-plugin-manager.jar:/app/opt/jenkins-plugin-manager.jar
-    working_dir: /app
-    command: ["java", "-jar", "/opt/jenkins-plugin-manager.jar"]
     ports:
       - "8080:8080"
+    restart: always
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://46.101.105.82:5432/fisherman
+      SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.0.199:5432/fisherman
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
     deploy:
