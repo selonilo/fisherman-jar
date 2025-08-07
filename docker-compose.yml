@@ -5,9 +5,9 @@ services:
     image: eclipse-temurin:21-jdk   # hazır image, build yok
     container_name: fisherman-backend
     volumes:
-      - ./app.jar:/app/app.jar
+      - ./opt/jenkins-plugin-manager.jar:/app/opt/jenkins-plugin-manager.jar
     working_dir: /app
-    command: ["java", "-jar", "app.jar"]
+    command: ["java", "-jar", "/opt/jenkins-plugin-manager.jar"]
     ports:
       - "8080:8080"
     environment:
