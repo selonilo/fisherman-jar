@@ -11,6 +11,8 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.0.199:5432/fisherman
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+    volumes:
+      - /home/selo/fisherman/uploads:/home/selo/fisherman/uploads
     deploy:
       resources:
         limits:
